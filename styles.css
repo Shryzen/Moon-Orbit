@@ -1,0 +1,64 @@
+/* Center everything on the page */
+body {
+    height: 100vh; /* 100% of viewport height */
+    margin: 0;
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* Space container */
+.space {
+    width: 200px;
+    height: 200px;
+    position: relative; /* For absolute positioning of children */
+}
+
+/* Earth */
+.earth {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2E86C1;
+    border-radius: 50%;
+}
+
+/* Orbit path */
+.orbit {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Moon */
+.moon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #AEB6BF;
+    border-radius: 50%;
+}
+
+/* Animation for the orbit */
+@keyframes orbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translate(-50%, -50%);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translate(-50%, -50%);
+    }
+}
+
+/* Apply animation to orbit */
+.orbit {
+    animation: orbit 5s linear infinite;
+}
